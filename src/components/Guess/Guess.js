@@ -4,15 +4,15 @@ function Guess({handleGuessWord}) {
 
   const [word,setWord] = React.useState("");
 
-  return <form class="guess-input-wrapper" onSubmit={(event)=> {
+  return <form className="guess-input-wrapper" onSubmit={(event)=> {
     event.preventDefault();
     handleGuessWord(word);
     setWord("");
   }}>
-  <label for="guess-input">Enter guess:</label>
-  <input id="guess-input" type="text" style={{"text-transform": "uppercase"}} onChange={event => {
+  <label htmlFor="guess-input">Enter guess:</label>
+  <input id="guess-input" value ={word} type="text" style={{textTransform: "uppercase"}} onChange={event => {
               setWord(event.target.value);
-            }} minlength="5" maxlength="5" required/>
+            }} minLength="5" maxLength="5" required/>
 </form>;
 }
 
